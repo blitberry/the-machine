@@ -7,7 +7,8 @@ from crewai import Agent, Task, Process, Crew
 from langchain.utilities import GoogleSerperAPIWrapper
 
 # to get your api key for free, visit and signup: https://serper.dev/
-os.environ["SERPER_API_KEY"] = "db110993b51aaf2552601d85cfccc0a9b57af5fc"
+os.environ["SERPER_API_KEY"] = "API KEY HERE"
+os.environ["OPENAI_API_KEY"] = "API KEY HERE"
 
 search = GoogleSerperAPIWrapper()
 
