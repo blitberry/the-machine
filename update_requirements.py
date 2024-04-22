@@ -1,3 +1,16 @@
+# Here's an enhanced script that will preserve categories and comments in the requirements.txt file
+
+# First, we will define a function to classify the new packages. For simplicity, in this example, we will
+# just place them under a new category called "New Packages". This can be modified based on a set of
+# rules or manual input later on.
+
+"""def classify_package(package):
+    # Placeholder for future package classification logic
+    # For now, we just return "New Packages" category
+    return "\n# New Packages\n"
+
+# Here is the enhanced script with categorization
+enhanced_script_content = """
 
 import subprocess
 
