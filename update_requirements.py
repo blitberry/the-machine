@@ -43,14 +43,18 @@ def merge_requirements(existing, new_packages):
     return updated_lines
 
 def main():
-    existing_lines = read_requirements('/path/to/your/requirements.txt')
+    existing_lines = read_requirements('requirements.txt')  # Adjusted to relative path
     existing_packages = parse_requirements(existing_lines)
     installed_packages = parse_requirements(get_installed_packages().splitlines())
     updated_lines = merge_requirements(existing_packages, installed_packages)
     
-    # Write updated requirements back to file
-    with open('/path/to/your/requirements.txt', 'w') as file:
+     # Write updated requirements back to file
+    with open('requirements.txt', 'w') as file:  # Adjusted to relative path
         file.writelines(updated_lines)
 
 if __name__ == "__main__":
     main()
+    
+
+
+
