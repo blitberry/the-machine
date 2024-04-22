@@ -43,13 +43,16 @@ def merge_requirements(existing, new_packages):
     return updated_lines
 
 def main():
-    existing_lines = read_requirements('requirements.txt')  # Adjusted to relative path
+    # Absolute path to where the requirements.txt file is located
+    requirements_path = '/Users/melissaespinoza/env/requirements.txt'  # Update with your actual path
+
+    existing_lines = read_requirements(requirements_path)  # Use the absolute path
     existing_packages = parse_requirements(existing_lines)
     installed_packages = parse_requirements(get_installed_packages().splitlines())
     updated_lines = merge_requirements(existing_packages, installed_packages)
     
-     # Write updated requirements back to file
-    with open('requirements.txt', 'w') as file:  # Adjusted to relative path
+    # Write updated requirements back to file
+    with open(requirements_path, 'w') as file:  # Use the same absolute path
         file.writelines(updated_lines)
 
 if __name__ == "__main__":
