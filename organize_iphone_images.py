@@ -20,7 +20,7 @@ def move_files_and_clean_empty_directories(main_folder_path):
         if subfolder.is_dir():
             # Move all files from the subfolder to the main directory
             for file in subfolder.iterdir():
-                if file.is_file():
+                if file.is_file() and not file.name.startswith('.'):  # Skip hidden files
                     new_location = main_folder_path.joinpath(file.name)
                     if not new_location.exists():  # Prevent overwriting files
                         shutil.move(str(file), str(new_location))
@@ -34,7 +34,7 @@ def move_files_and_clean_empty_directories(main_folder_path):
                 print(f"Deleted empty subfolder: {subfolder}")
 
 # Replace 'path_to_your_folder' with the actual path to your 'iphone-images' folder
-base_path = 'iphone-images' 
+base_path = 'iphone-images'  # Ensure this is the correct path to the folder
 
 # Execute the file organization and cleaning process
 move_files_and_clean_empty_directories(base_path)
